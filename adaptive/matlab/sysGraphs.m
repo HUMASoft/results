@@ -4,8 +4,8 @@ dts=0.02;
 z=tf('z',0.02);
 s=tf('s');
 
-datan=csvread("/home/humasoft/Escritorio/adasysnum000.csv");
-datad=csvread("/home/humasoft/Escritorio/adasysden000.csv");
+datan=csvread("../data/final/adasysnum000.csv");
+datad=csvread("../data/final/adasysden000.csv");
 
 N=size(datan,2);
 M=size(datad,2);
@@ -25,8 +25,16 @@ for i=1:SZ
 poles=[poles, roots(datad(i,3:M))]; %#ok<*AGROW>
 end
 
-figure;
-plot(real(poles)');
+
+
+fig=figure;hold on;
+plot(t,real(poles)');
+plot(t,datan(:,3:N));
+
+ylabel('Roots of model denominator');
+xlabel('time (sec)');
+legend('Pole 1', 'Pole 2', 'Gain','Location','best');
+saveas(fig,'../sysConverge000','epsc');
 
 figure;
 plot(imag(poles)');

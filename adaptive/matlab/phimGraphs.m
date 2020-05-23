@@ -1,4 +1,4 @@
-data=csvread("/home/humasoft/Escritorio/sensor-response.csv")
+data=csvread("../data/final//sensor-response.csv")
 t=data(:,1);
 mag=data(:,2);
 phi=data(:,3);

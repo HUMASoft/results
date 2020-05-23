@@ -1,4 +1,4 @@
-data=csvread("/home/humasoft/Escritorio/adacon000.csv")
+data=csvread("../data/final/adacon000.csv")
 t=data(:,1);
 kp=data(:,2);
 kv=data(:,3);
