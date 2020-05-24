@@ -1,5 +1,5 @@
 
-data=csvread("../data/final/time-response.csv")
+data=csvread("../data/final/time600response.csv")
 t=data(:,1);
 incli=data(:,2);
 motor=data(:,3);
